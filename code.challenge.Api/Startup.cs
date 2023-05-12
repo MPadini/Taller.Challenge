@@ -49,6 +49,8 @@ namespace code.challenge.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
@@ -75,8 +77,6 @@ namespace code.challenge.Api
             app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
-
-            //app.UseRouting();
 
             app.UseAuthorization();
 

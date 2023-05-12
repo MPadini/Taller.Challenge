@@ -19,12 +19,12 @@ namespace code.challenge.Repository.Repositories
 
         public async Task<TEntity> GetByIdAsync(int id)
         {
-            return await _context.Set<TEntity>().FirstOrDefaultAsync(e => e.Id == id);
+            return await _context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _context.Set<TEntity>().ToListAsync();
+            return await _context.Set<TEntity>().AsNoTracking().ToListAsync();
         }
 
         public async Task<TEntity> AddAsync(TEntity entity)

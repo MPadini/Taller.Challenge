@@ -1,0 +1,43 @@
+﻿@using code.challenge.Core.Entities;
+@model IEnumerable<Car>
+@{
+}
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Doors</th>
+            <th>Color</th>
+            <th>Guess the price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Id</td>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Doors</td>
+                <td>@car.Color</td>
+                <td>
+                    <form method="post">
+                        <label for="guess-price-@car.Id">Enter your guess:</label>
+                        <input type="number" id="guess-price-@car.Id" name="guessPrice" min="0" required />
+                        <input type="hidden" name="carId" value="@car.Id" />
+                        <button type="submit">Submit</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (TempData["GuessResult"] != null)
+{
+    <p style="color: @TempData["GuessResultColor"]">@TempData["GuessResult"]</p>
+}

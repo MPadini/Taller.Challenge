@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+/.vs
+/code.challenge.Api/bin/Debug
+/code.challenge.Api/obj
+/code.challenge.Core/bin/Debug
+/code.challenge.Core/obj
+/code.challenge.IntegrationTests/bin/Debug
+/code.challenge.IntegrationTests/obj
+/code.challenge.Repository/bin/Debug
+/code.challenge.Repository/obj/Debug
+/code.challenge.Repository/obj
+/code.challenge.Service/bin/Debug
+/code.challenge.Service/obj
+/code.challenge.UnitTests/bin/Debug
+/code.challenge.UnitTests/obj
